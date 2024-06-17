@@ -28,11 +28,11 @@ const __dirname1 = path.resolve();
 
 if (process.env.NODE_ENV === "production") {
   // Adjust the path to the build directory of your React app
-  app.use(express.static(path.join(__dirname1, "../FRONTEND/dist")));
+  app.use(express.static(path.join(__dirname1, "../FRONTEND/build")));
 
   app.get("*", (req, res) =>
     // Adjust the path to the index.html file of your React app
-    res.sendFile(path.resolve(__dirname1, "../FRONTEND/dist/index.html"))
+    res.sendFile(path.resolve(__dirname1, "../FRONTEND/build/index.html"))
   );
 } else {
   app.get("/", (req, res) => {
